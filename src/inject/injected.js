@@ -4,6 +4,22 @@
 	var noProgrammaticScrollingEver = false;
 	var enabled = true;
 
+	document.addEventListener('initScrollJackerPreventer', function(e){
+		var settings = e.detail;
+		debug = settings.debug;
+		switch (settings.strictness){
+			case "strict":
+				noProgrammaticScrollingEver = true;
+				break;
+			case "medium":
+				break;
+			case "off":
+				enabled = false;
+				break;
+		}
+		init();
+	});
+
 	var eventBlacklist = [
 		"mousemove",
 		"scroll",
@@ -68,18 +84,22 @@
 	function wrapWindowFunction(name){
 		window[name] = wrap(window[name]);
 	}
+
+	function init(){
 	
-	if (enabled){
+		if (enabled){
 
-		if (typeof jQuery != 'undefined'){
-			var $ = jQuery;
-			$.fn.scrollTo = wrap($.fn.scrollTo);
-			wrapBlacklistedEventsFromElement(window, $);
-			wrapBlacklistedEventsFromElement(document, $);
-			wrapBlacklistedEventsFromElement(document.body, $);
+			if (typeof jQuery != 'undefined'){
+				var $ = jQuery;
+				$.fn.scrollTo = wrap($.fn.scrollTo);
+				wrapBlacklistedEventsFromElement(window, $);
+				wrapBlacklistedEventsFromElement(document, $);
+				wrapBlacklistedEventsFromElement(document.body, $);
+			}
+
+			windowFunctionsToWrap.forEach(wrapWindowFunction);
+
 		}
-
-		windowFunctionsToWrap.forEach(wrapWindowFunction);
 
 	}
 
