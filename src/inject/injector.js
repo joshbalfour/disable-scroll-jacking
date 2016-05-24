@@ -15,6 +15,5 @@ chrome.storage.sync.get({
 	var event = new CustomEvent('initScrollJackerPreventer', { detail: settings });
 	setTimeout(function(){
 		document.dispatchEvent(event);
-	}, 200);
-	
+	}, 10);
 });
