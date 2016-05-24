@@ -10,10 +10,14 @@
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
-  "options_page": "src/options_custom/index.html",
+  "options_ui": {
+    "page": "src/options/index.html",
+    "chrome_style": true
+  },
   "permissions": [
     "https://*/*",
-    "http://*/*"
+    "http://*/*",
+    "storage"
   ],
   "content_scripts": [
     {

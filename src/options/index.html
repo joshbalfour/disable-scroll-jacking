@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options</title>
+  <style>
+    body: { padding: 10px; }
+  </style>
+</head>
+
+<body>
+  Strictness:
+  <select id="strictness">
+   <option value="off">Off</option>
+   <option value="medium">Medium (Recommended)</option>
+   <option value="high">High</option>
+  </select>
+  <br>
+  <br>
+  <label>
+    <input type="checkbox" id="debug">
+    Debug Mode
+  </label>
+  <br>
+  <br>
+  <div id="status"></div>
+  <button id="save">Save</button>
+
+  <script src="options.js"></script>
+</body>
+</html>
