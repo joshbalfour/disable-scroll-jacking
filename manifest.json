@@ -22,8 +22,9 @@
        "http://*/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "src/inject/injector.js"
       ]
     }
-  ]
+  ],
+  "web_accessible_resources" : ["src/inject/injected.js"]
 }
