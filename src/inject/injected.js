@@ -5,19 +5,7 @@
 	var enabled = true;
 
 	document.addEventListener('initScrollJackerPreventer', function(e){
-		var settings = e.detail;
-		debug = settings.debug;
-		switch (settings.strictness){
-			case "strict":
-				noProgrammaticScrollingEver = true;
-				break;
-			case "medium":
-				break;
-			case "off":
-				enabled = false;
-				break;
-		}
-		init();
+		init(e.detail);
 	});
 
 	var eventBlacklist = [
@@ -85,8 +73,21 @@
 		window[name] = wrap(window[name]);
 	}
 
-	function init(){
-	
+	function init(settings){
+		
+		debug = settings.debug;
+		
+		switch (settings.strictness){
+			case "strict":
+				noProgrammaticScrollingEver = true;
+				break;
+			case "medium":
+				break;
+			case "off":
+				enabled = false;
+				break;
+		}
+
 		if (enabled){
 
 			if (typeof jQuery != 'undefined'){
