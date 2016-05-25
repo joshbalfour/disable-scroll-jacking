@@ -151,15 +151,18 @@ function reportCurrentTab(){
 		var reportURL = makeReportUrl({
 			issue_title: url+' is stealing my scrollbar!',
 			details: 'Please fill in the CAPTCHA and click submit'
-		});
+		}, {currentPage: url});
+		dsj_event_detail('report_url', url);
 		window.open(reportURL);
 	});
+
 }
 
 function reportIssue(){
 	if (document.location.hash == '#ba'){
 		getCurrentTabUrl(function(url){
 			window.open(makeReportUrl(null, {currentPage: url}));
+			dsj_event_detail('report_issue', url);
 		});
 	} else {
 		window.open(makeReportUrl());
