@@ -1,6 +1,6 @@
 ![Logo](extension/icons/icon128.png)
 
-## Disable Scroll Jacking
+## 🚫 Disable Scroll Jacking
 
 Chrome Extension which disables scroll hijacking on websites.
 
@@ -16,14 +16,19 @@ I was.
 So I made this Chrome extension to take back control of the scroll.
 
 
-> ##### Make scrolling bearable again.
+> Make scrolling bearable again.
+
 
 ### Demo
 
 #### Before
+Scroll = jacked! 👎
+
 ![Demo - Before](assets/demo-before.gif)
 
 #### After
+Scroll at your own pace 👍
+
 ![Demo - After](assets/demo-after.gif)
 
 #### Ideas/Issues ?
