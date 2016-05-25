@@ -1,0 +1,6 @@
+{
+  "name": "Disable Scroll Jacking",
+  "tagline": "Chrome Extension to disable scroll jacking",
+  "body": "![Logo](extension/icons/icon128.png)\r\n\r\n## 🚫 Disable Scroll Jacking\r\n\r\nChrome Extension which disables scroll hijacking on websites.\r\n\r\nBy [Josh Balfour](https://twitter.com/joshbal4)\r\n\r\n\r\n### Description\r\n\r\nSick of websites hijacking your scrolling? \r\n\r\nI was. \r\n\r\nSo I made this Chrome extension to take back control of the scroll.\r\n\r\n\r\n> Make scrolling bearable again.\r\n\r\n\r\n### Demo\r\n\r\n#### Before\r\nScroll = jacked! 👎\r\n\r\n![Demo - Before](assets/demo-before.gif)\r\n\r\n#### After\r\nScroll at your own pace 👍\r\n\r\n![Demo - After](assets/demo-after.gif)\r\n\r\n#### Ideas/Issues?\r\n\r\nPlease fill [This Form](https://gitreports.com/issue/joshbalfour/disable-scroll-jacking?name=optional&email=optional@co.com) in to let me know, or [@ me on twitter](https://twitter.com/joshbal4)!\r\n\r\n#### Want to look at the code?\r\n\r\nThe extension consists of [a script](extension/src/inject/injector.js) which injects [another script](extension/src/inject/injected.js) into each page.\r\n\r\nThe extension's options page (also the browser action) is [here](extension/src/options/index.html).",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
