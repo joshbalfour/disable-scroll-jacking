@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Options</title>
-  <style>
-    body: { padding: 10px; }
-  </style>
+	<title>Options</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/extensions.css">
+	<style>
+		body: { padding: 10px; }
+		#rct {
+			border-top: 1px solid #eee;
+			margin-top: 15px;
+			padding-top: 15px;
+
+		}
+		.op #reportIssue {
+			float: right; 
+			margin-top: -25px;
+		}
+		.ba #rct {
+			margin-bottom: 15px;
+		}
+		.ba #reportIssue {
+		}
+	</style>
 </head>
 
 <body>
-  Strictness:
-  <select id="strictness">
-   <option value="off">Off</option>
-   <option value="medium">Medium (Recommended)</option>
-   <option value="high">High</option>
-  </select>
-  <br>
-  <br>
-  <label>
-    <input type="checkbox" id="debug">
-    Debug Mode
-  </label>
-  <br>
-  <br>
-  <label>
-    <input type="checkbox" id="tracking">
-    Allow anonymous usage and error tracking. Does not track which websites you go on, only scrolling.
-  </label>
-  <br>
-  <br>
-  <div id="status"></div>
-  <button id="save">Save</button>
+	<h3>Settings</h3>
+	Strictness:
+	<select id="strictness">
+	 <option value="off">Off</option>
+	 <option value="medium">Medium (Recommended)</option>
+	 <option value="high">High</option>
+	</select>
+	<br>
+	<br>
+	<label>
+		<input type="checkbox" id="debug">
+		Debug Mode
+	</label>
+	<br>
+	<br>
+	<label>
+		<input type="checkbox" id="tracking">
+		Allow anonymous usage and error tracking. Does not track which websites you go on, only scrolling.
+	</label>
+	<br>
+	<br>
+	<div id="status"></div>
+	<button id="save">Save</button>
+	<br>
+	<div id="rct">
+		<button id="reportCurrentTab">This page still hijacks my scroll!</button>
+		<br>
+		<span style="display: block; margin-top: 10px;">
+			This will send a link to the website you're currently on to our developers so they can fix it
+		</span>
+	</div>
 
-  <script src="options.js"></script>
+	<button id="reportIssue">Report Issue</button>
+
+	<script src="options.js"></script>
 </body>
 </html>
