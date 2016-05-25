@@ -243,3 +243,16 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+
+.logo {
+  background: url(../assets/icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 157px;
+  height: 250px;
+  display: block;
+  margin: auto;
+}
+
+
