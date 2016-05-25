@@ -2,12 +2,32 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Disable Scroll Jacking by joshbalfour</title>
+    <title>Disable Scroll Jacking</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-78286573-1', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'website', 'view');
+
+      var trackOutboundLink = function(url) {
+         ga('send', 'event', 'outbound', 'click', url, {
+           'transport': 'beacon',
+           'hitCallback': function(){document.location = url;}
+         });
+      };
+
+    </script>
+
   </head>
   <body>
     <section class="page-header">
@@ -15,66 +35,66 @@
       <h1 class="project-name">Disable Scroll Jacking</h1>
       <h2 class="project-tagline">Chrome Extension to disable scroll jacking</h2>
       <a href="#" class="btn">Add to Chrome</a>
-      <a href="https://github.com/joshbalfour/disable-scroll-jacking" class="btn">View Source on GitHub</a>
-      <p>By <a href="https://twitter.com/joshbal4" style="color: white">Josh Balfour</a></p>
+      <a href="https://github.com/joshbalfour/disable-scroll-jacking" class="btn" onclick="trackOutboundLink('https://github.com/joshbalfour/disable-scroll-jacking'); return false;">View Source on GitHub</a>
+      <p>By <a href="https://twitter.com/joshbal4" onclick="trackOutboundLink('https://twitter.com/joshbal4'); return false;" style="color: white">Josh Balfour</a></p>
     </section>
 
     <section class="main-content">
 
-<h3>Sick of websites hijacking your scrolling? </h3>
+      <h3>Sick of websites hijacking your scrolling? </h3>
 
-<p>I was. </p>
+      <p>I was. </p>
 
-<p>So I made this Chrome extension to take back control of the scroll.</p>
-<br>
-<center>
-  <p style="font-style: italic">Make scrolling bearable again.</p>
-</center>
+      <p>So I made this Chrome extension to take back control of the scroll.</p>
+      <br>
+      <center>
+        <p style="font-style: italic">Make scrolling bearable again.</p>
+      </center>
 
-<h3>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h3>
-<br>
-<div class="container" style="width: 100%; display: block;">
+      <h3>
+      <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h3>
+      <br>
+      <div class="container" style="width: 100%; display: block;">
 
-  <div style="float: left;">
-    <h4>
-    <a id="before" class="anchor" href="#before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Before</h4>
+        <div style="float: left;">
+          <h4>
+          <a id="before" class="anchor" href="#before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Before</h4>
 
-    <p>Scroll = jacked! <g-emoji alias="-1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png">👎</g-emoji></p>
+          <p>Scroll = jacked! <g-emoji alias="-1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png">👎</g-emoji></p>
 
-    <blockquote class="imgur-embed-pub" lang="en" data-id="A8XhbR3"><a href="https://imgur.com/A8XhbR3">View post on imgur.com</a></blockquote><script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script>
+          <blockquote class="imgur-embed-pub" lang="en" data-id="A8XhbR3"><a href="https://imgur.com/A8XhbR3">View post on imgur.com</a></blockquote><script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script>
 
-  </div>
-  <div style="float: left; padding-left: 25px;">
-    <h4>
-    <a id="after" class="anchor" href="#after" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After</h4>
+        </div>
+        <div style="float: left; padding-left: 25px;">
+          <h4>
+          <a id="after" class="anchor" href="#after" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After</h4>
 
-    <p>Scroll at your own pace <g-emoji alias="+1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png">👍</g-emoji></p>
+          <p>Scroll at your own pace <g-emoji alias="+1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png">👍</g-emoji></p>
 
-    <blockquote class="imgur-embed-pub" lang="en" data-id="KpY6ZgU"><a href="https://imgur.com/KpY6ZgU">View post on imgur.com</a></blockquote><script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script>
-  </div>
-</div>
-<div style="clear: both;"></div>
-<h4>
-  <a id="ideasissues" class="anchor" href="#ideasissues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ideas/Issues?</h4>
+          <blockquote class="imgur-embed-pub" lang="en" data-id="KpY6ZgU"><a href="https://imgur.com/KpY6ZgU">View post on imgur.com</a></blockquote><script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+      <h4>
+        <a id="ideasissues" class="anchor" href="#ideasissues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ideas/Issues?</h4>
 
-  <p>Please fill <a href="https://gitreports.com/issue/joshbalfour/disable-scroll-jacking?name=optional&amp;email=optional@co.com">This Form</a> in to let me know, or <a href="https://twitter.com/joshbal4">@ me on twitter</a>!</p>
-  <br>
-  <br>
-  <h4>
-  <a id="want-to-look-at-the-code" class="anchor" href="#want-to-look-at-the-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Want to look at the code?</h4>
+        <p>Please fill <a href="https://gitreports.com/issue/joshbalfour/disable-scroll-jacking?name=optional&amp;email=optional@co.com" onclick="trackOutboundLink('https://gitreports.com/issue/joshbalfour/disable-scroll-jacking?name=optional&amp;email=optional@co.com'); return false;">This Form</a> in to let me know, or <a href="https://twitter.com/joshbal4" onclick="trackOutboundLink('https://twitter.com/joshbal4'); return false;">@ me on twitter</a>!</p>
+        <br>
+        <br>
+        <h4>
+        <a id="want-to-look-at-the-code" class="anchor" href="#want-to-look-at-the-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Want to look at the code?</h4>
 
-  <p>The extension consists of <a href="extension/src/inject/injector.js">a script</a> which injects <a href="extension/src/inject/injected.js">another script</a> into each page.</p>
+        <p>The extension consists of <a href="https://github.com/joshbalfour/disable-scroll-jacking/blob/master/extension/src/inject/injector.js" onclick="trackOutboundLink('https://github.com/joshbalfour/disable-scroll-jacking/blob/master/extension/src/inject/injector.js'); return false;" >a script</a> which injects <a href="https://github.com/joshbalfour/disable-scroll-jacking/blob/master/extension/src/inject/injected.js" onclick="trackOutboundLink('https://github.com/joshbalfour/disable-scroll-jacking/blob/master/extension/src/inject/injected.js'); return false;" >another script</a> into each page.</p>
 
-  <p>The extension's options page (also the browser action) is <a href="extension/src/options/index.html">here</a>.</p>
+        <p>The extension's options page (also the browser action) is <a href="https://github.com/joshbalfour/disable-scroll-jacking/blob/master/extension/src/options/index.html" onclick="trackOutboundLink('https://github.com/joshbalfour/disable-scroll-jacking/blob/master/extension/src/options/index.html'); return false;">here</a>.</p>
 
-  <br>
-  <br>
-</div>
+        <br>
+        <br>
+      </div>
 
 
 
-</section>
+      </section>
 
   
   </body>
