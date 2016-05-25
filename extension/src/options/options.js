@@ -39,13 +39,13 @@ function save_options() {
 	}, function() {
 		// Update status to let user know options were saved.
 		var status = document.getElementById('status');
-		status.textContent = 'Options saved.';
+		status.style.display="block";
+		setTimeout(function() {
+			status.style.display="none";
+		}, 1000);
 		if (settings.tracking){
 			initEvents();
 		}
-		setTimeout(function() {
-			status.textContent = '';
-		}, 1250);
 	});
 }
 
@@ -54,16 +54,16 @@ var eventsLoaded = false;
 
 function initEvents(){
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','dsj_events');
-		
-		dsj_events('create', eventsCode, 'auto');
-		dsj_events('set', 'checkProtocolTask', function(){});
-		dsj_event('opened');
-		dsj_events('set', 'page', 'extension.options');
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','dsj_events');
+	
+	dsj_events('create', eventsCode, 'auto');
+	dsj_events('set', 'checkProtocolTask', function(){});
+	dsj_event('opened');
+	dsj_events('set', 'page', 'extension.options');
 
-		eventsLoaded = true;
+	eventsLoaded = true;
 }
 
 // Restores select box and checkbox state using the preferences

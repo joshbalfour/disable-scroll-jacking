@@ -4,7 +4,9 @@
 	<title>Options</title>
 	<link rel="stylesheet" type="text/css" href="../vendor/extensions.css">
 	<style>
-		body: { padding: 10px; }
+		body { 
+			padding-bottom: 5px; 
+		}
 		#rct {
 			border-top: 1px solid #eee;
 			margin-top: 15px;
@@ -13,19 +15,27 @@
 		}
 		.op #reportIssue {
 			float: right; 
-			margin-top: -25px;
+			margin-top: -15px;
 		}
 		.ba #rct {
 			margin-bottom: 15px;
+			margin-top: 20px;
 		}
-		.ba #reportIssue {
+		#status, #save {
+			float: left;
+		}
+		#status {
+			margin-top: 5px;
+			margin-left: 15px;
+
+			display: none;
 		}
 	</style>
 </head>
 
 <body>
 	<h3>Settings</h3>
-	Strictness:
+	Strictness Level:
 	<select id="strictness">
 	 <option value="off">Off</option>
 	 <option value="medium">Medium (Recommended)</option>
@@ -41,18 +51,18 @@
 	<br>
 	<label>
 		<input type="checkbox" id="tracking">
-		Allow anonymous usage and error tracking. Does not track which websites you go on, only scrolling.
+		Allow anonymous usage reports and error tracking. Won't track which websites you go on, only internal events and issues.
 	</label>
 	<br>
 	<br>
-	<div id="status"></div>
 	<button id="save">Save</button>
+	<div id="status">Options saved.</div>
 	<br>
 	<div id="rct">
 		<button id="reportCurrentTab">This page still hijacks my scroll!</button>
 		<br>
 		<span style="display: block; margin-top: 10px;">
-			This will send a link to the website you're currently on to our developers so they can fix it
+			This will send a link to the website you're currently on to our developers so they can fix it.
 		</span>
 	</div>
 
