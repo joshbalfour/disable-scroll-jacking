@@ -4,9 +4,49 @@
 	var noProgrammaticScrollingEver = false;
 	var enabled = true;
 
+	if (typeof dsj_events != 'undefined') {
+		dsj_events('create', 'UA-78286573-1', 'auto');
+		dsj_events('set', 'page', 'extension.instance');
+		dsj_events('set', 'title', 'extension instance');
+	}
+
+	function dsj_event(action){
+		if (typeof dsj_events != 'undefined') {
+			dsj_events('send', 'event', 'extension', action);
+		}
+	}
+
+	function dsj_event_detail(action, label, value){
+		if (typeof dsj_events != 'undefined') {
+			dsj_events('send', 'event', 'extension', action, label, value);
+		}
+	}
+
+	function dsj_exception(err){
+		if (typeof dsj_events != 'undefined') {
+			dsj_events('send', 'exception', {
+				'exDescription': 'initialisation error: '+err.message,
+				'exFatal': false
+			});
+		}
+	}
+
 	document.addEventListener('initScrollJackerPreventer', function(e){
-		init(e.detail);
+		var settings = e.detail;
+		try {
+			init(settings);
+
+			var levels = ['off', 'medium', 'strict'];
+			dsj_event_detail('initialised', 'strictness', levels.indexOf(settings.strictness));
+			if (settings.debug){
+				dsj_event_detail('initialised', 'debug', 1);
+			}
+		} catch (err) {
+			dsj_exception(err);
+		}
 	});
+
+	dsj_event('injected');
 
 	var eventBlacklist = [
 		"mousemove",
