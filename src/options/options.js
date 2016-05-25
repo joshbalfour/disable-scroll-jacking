@@ -107,7 +107,7 @@ function getCurrentTabUrl(callback) {
 	});
 }
 
-function makeReportUrl(form){
+function makeReportUrl(form, extra){
 	var object = {
 		name: 'optional',
 		email: 'optional@co.com',
@@ -125,7 +125,15 @@ function makeReportUrl(form){
 		}
 	}
 
-	object.details += encodeURIComponent('\n \n \n')+'Debug Info: '+encodeURIComponent(navigator.userAgent);
+	var debugInfo = {
+		ua : navigator.userAgent,
+	};
+
+	for (var j in extra){
+		debugInfo[j] = extra[j];
+	}
+
+	object.details += encodeURIComponent('\n \n \n')+'Debug Info: '+encodeURIComponent(JSON.stringify(debugInfo, null, 2));
 	
 	var urlParts = [];
 
@@ -149,7 +157,13 @@ function reportCurrentTab(){
 }
 
 function reportIssue(){
-	window.open(makeReportUrl());
+	if (document.location.hash == '#ba'){
+		getCurrentTabUrl(function(url){
+			window.open(makeReportUrl(null, {currentPage: url}));
+		});
+	} else {
+		window.open(makeReportUrl());
+	}
 }
 
 document.getElementById('reportIssue').onclick = reportIssue;
