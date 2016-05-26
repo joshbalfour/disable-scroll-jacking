@@ -30,6 +30,25 @@
 
 			display: none;
 		}
+		#strictnessinfo {
+			position: absolute;
+			opacity: 0;
+			transition: 0.5s opacity;
+			background: white;
+			padding: 5px;
+			z-index: 99;
+		}
+		#strictness{
+			margin-top: 5px;
+		}
+		#strictnessinfoToggle{
+			margin-top: 9px;
+			display: inline-block;
+		}
+		#strictnessinfo p {
+			line-height: 1.25em;
+			padding: 5px;
+		}
 	</style>
 </head>
 
@@ -41,20 +60,27 @@
 	 <option value="medium">Medium (Recommended)</option>
 	 <option value="high">High</option>
 	</select>
+	<a id="strictnessinfoToggle">What does this mean?</a>
+	<div id="strictnessinfo">
+		<p>Medium prevents sites changing your scroll position whilst your scrolling but keep scroll detection.</p>
+		<p>High disables all scroll detection, which might break some sites.</p>
+	</div>
 	<br>
 	<br>
-	<label>
-		<input type="checkbox" id="debug">
-		Debug Mode
-	</label>
-	<br>
-	<br>
-	<label>
-		<input type="checkbox" id="tracking">
-		Allow anonymous usage reports and error tracking. Won't track which websites you go on, only internal events and issues.
-	</label>
-	<br>
-	<br>
+	<div id="only-op">
+		<label>
+			<input type="checkbox" id="debug">
+			Debug Mode
+		</label>
+		<br>
+		<br>
+		<label>
+			<input type="checkbox" id="tracking">
+			Allow anonymous usage reports and error tracking. This won't track which websites you go on, only internal things.
+		</label>
+		<br>
+		<br>
+	</div>
 	<button id="save">Save</button>
 	<div id="status">Options saved.</div>
 	<br>

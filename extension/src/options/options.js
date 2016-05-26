@@ -2,6 +2,7 @@
 if (document.location.hash != '#ba'){
 	document.getElementById('rct').style.display='none';
 } else {
+	document.getElementById('only-op').style.display='none';
 	document.getElementById('rct').onclick = reportCurrentTab;
 }
 
@@ -18,6 +19,17 @@ function dsj_event_detail(action, label, value){
 		dsj_events('send', 'event', 'options', action, label, value);
 	}
 }
+
+function morestrictnessinfo(){
+	document.getElementById('strictnessinfo').style.opacity = 1;
+}
+
+function lessstrictnessinfo(){
+	document.getElementById('strictnessinfo').style.opacity = 0;
+}
+
+document.getElementById('strictnessinfoToggle').addEventListener("mouseout",lessstrictnessinfo);
+document.getElementById('strictnessinfoToggle').addEventListener("mouseover",morestrictnessinfo);
 
 // Saves options to chrome.storage.sync.
 function save_options() {
