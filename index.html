@@ -50,13 +50,15 @@
       };
 
       function install(){
-        ga('send', 'event','installation','from-site');
+        ga('send', 'event','installation','from-site-start');
         chrome.webstore.install("https://chrome.google.com/webstore/detail/ehpdicggenhgapiikfpnmppdonadlnmp", 
           function(){
             document.getElementById('thanksForInstalling').style.display="inline-block";
             document.getElementById('addToChrome').style.display="none";
+            ga('send', 'event','installation','from-site-success');
         }, function(){
             console.error('Extension installation failed', arguments);
+            ga('send', 'event','installation','from-site-failed');
         });
       }
 
