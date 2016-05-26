@@ -51,7 +51,13 @@
 
       function install(){
         ga('send', 'event','installation','from-site');
-        chrome.webstore.install();
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/ehpdicggenhgapiikfpnmppdonadlnmp", 
+          function(){
+            document.getElementById('thanksForInstalling').style.display="inline-block";
+            document.getElementById('addToChrome').style.display="none";
+        }, function(){
+            console.error('Extension installation failed', arguments);
+        });
       }
 
     </script>
