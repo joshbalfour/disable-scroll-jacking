@@ -53,15 +53,15 @@
       }
 
       if (chrome){
-        document.getElementsById('viewOnAppStore').style.display="none";
+        document.getElementById('viewOnAppStore').style.display="none";
         if (!chrome.app.isInstalled) {
-          document.getElementsById('addToChrome').style.display="inline-block";
+          document.getElementById('addToChrome').style.display="inline-block";
         } else {
-          document.getElementsById('thanksForInstalling').style.display="inline-block";
+          document.getElementById('thanksForInstalling').style.display="inline-block";
         }
       } else {
-        document.getElementsById('viewOnAppStore').style.display="inline-block";
-        document.getElementsById('addToChrome').style.display="none";
+        document.getElementById('viewOnAppStore').style.display="inline-block";
+        document.getElementById('addToChrome').style.display="none";
       }
 
     </script>
