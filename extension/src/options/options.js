@@ -22,10 +22,14 @@ function dsj_event_detail(action, label, value){
 
 function morestrictnessinfo(){
 	document.getElementById('strictnessinfo').style.opacity = 1;
+	document.getElementById('strictnessinfo').style.zIndex = 99;
 }
 
 function lessstrictnessinfo(){
 	document.getElementById('strictnessinfo').style.opacity = 0;
+	setTimeout(function(){
+		document.getElementById('strictnessinfo').style.zIndex = -1;
+	}, 500);
 }
 
 document.getElementById('strictnessinfoToggle').addEventListener("mouseout",lessstrictnessinfo);
