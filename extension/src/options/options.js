@@ -60,7 +60,7 @@ function save_options() {
 			status.style.display="none";
 		}, 1000);
 		if (settings.tracking){
-			initEvents();
+			// initEvents();
 		}
 	});
 }
@@ -68,19 +68,6 @@ function save_options() {
 var eventsCode = 'UA-78286573-1';
 var eventsLoaded = false;
 
-function initEvents(){
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','dsj_events');
-	
-	dsj_events('create', eventsCode, 'auto');
-	dsj_events('set', 'checkProtocolTask', function(){});
-	dsj_event('opened');
-	dsj_events('set', 'page', 'extension.options');
-
-	eventsLoaded = true;
-}
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
@@ -97,7 +84,7 @@ function restore_options() {
 
 		if (settings.tracking){
 			if (!eventsLoaded){
-				initEvents();
+				// initEvents();
 			} else {
 				window['ga-disable-'+eventsCode] = false;
 			}

@@ -1,6 +1,6 @@
 {
   "name": "Disable Scroll Jacking",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Disables annoying scroll hijacking.",
   "homepage_url": "https://joshbalfour.github.io/disable-scroll-jacking/",
@@ -33,6 +33,6 @@
   "browser_action": {
     "default_popup": "src/options/index.html#ba"
   },
-  "web_accessible_resources" : ["src/inject/injected.js", "src/vendor/analytics.js"],
+  "web_accessible_resources" : ["src/inject/injected.js"],
   "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 }
