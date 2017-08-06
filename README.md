@@ -6,12 +6,14 @@ Chrome Extension which disables scroll hijacking on websites.
 
 By [Josh Balfour](https://twitter.com/joshbal4)
 
+### Update
+6th August 2017: submitted and under review on chrome extension store
 
 ### Description
 
 Sick of websites hijacking your scrolling? 
 
-I was. 
+I was.
 
 So I made this Chrome extension to take back control of the scroll.
 
